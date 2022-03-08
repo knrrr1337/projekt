@@ -310,6 +310,7 @@ print(lista)
 print(min)
 '''
 
+'''
 f = open('osztalyzatok.txt', 'r', encoding='UTF-8')
 lista = []
 
@@ -344,3 +345,141 @@ for index in lista1:
     n = int(index[-1])
     osszeg += n
 print(osszeg)
+'''
+
+from operator import index
+import random
+from re import I
+'''
+lista = []
+szam = random
+
+for x in range(20):
+    randomszam = szam.randint(1, 30)
+    lista.append(randomszam)
+print(lista)
+
+legkisebb = lista[0]
+for i in lista:
+    if i < legkisebb:
+        legkisebb = i
+    
+print(f'a legnagyobb szam: {legkisebb}')
+
+legnagyobb = lista[0]
+
+for y in lista:
+    if y > legnagyobb:
+        legnagyobb = y
+
+print(f'a legnagyobb szam: {legnagyobb}')
+
+kisebb = 0
+nagyobb = 0
+
+for h in lista:
+    if h < 15:
+        kisebb += 1
+    else:
+        nagyobb += 1
+
+print(f'nagyobb: {nagyobb}, kisebb: {kisebb}')
+
+f = open('veeltlen.txt', 'w', encoding='UTF-8')
+'''
+
+
+'''
+for x in lista:
+    f.write(f'{str(x)}, ')
+
+f.write(f'\n {str(lista)}')
+'''
+
+'''
+atlag = 0
+for y in lista:
+    atlag += y
+
+print(atlag / len(lista))
+
+def prim(a):
+    oszto = 0
+    for m in range(1, a): 
+        if m % x == 0:
+            oszto += 1
+    if oszto == 2:
+        return 'prim :)'
+    else:
+        return 'nem prim'
+
+for j in lista:
+    print(j, prim(j))
+'''
+
+'''
+nev = input('nev:')
+
+for index in nev:
+    print(index)
+
+szo = input('hehe: ')
+
+f = open('nagybetus.txt', 'w', encoding='UTF-8')
+for i in nev:
+    f.write(i.upper().strip())
+f.close()
+
+a = open('nagybetus.txt', 'a', encoding='UTF-8')
+
+
+for s in range(3):
+    varos = input('vaors:')
+    a.write(f'\n{varos}')
+
+c = open('nagybetus.txt', 'r', encoding='UTF-8')
+
+if 'Veszprém' in c:
+    print('yay')
+else:
+    print('nay')
+'''
+
+
+lista = []
+
+for index in range(10):
+    randomszam = random.randint(1,20)
+    lista.append(randomszam)
+
+print(lista)
+
+
+van = False
+i = 0
+
+while not van and i < len(lista):
+    if lista[i] == 5:
+        van = True
+    i += 1
+
+if van == True:
+    print('van benne otos')
+else:
+    print('nincs benne otos')
+
+
+
+
+'''
+for i in lista:
+    if i != 5:
+        pass
+    else:
+        print('van')
+'''
+
+
+
+
+
