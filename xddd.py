@@ -445,7 +445,7 @@ else:
     print('nay')
 '''
 
-
+'''
 lista = []
 
 for index in range(10):
@@ -468,6 +468,13 @@ if van == True:
 else:
     print('nincs benne otos')
 
+osszeg = 0
+
+for h in lista:
+    osszeg += h
+
+print(osszeg)
+'''
 
 
 
@@ -479,7 +486,82 @@ for i in lista:
         print('van')
 '''
 
+'''
+szo = input('szo: ')
+i = 2
+
+for index in szo:
+    if index[i] % 2 == 0:
+        print(index)
+'''
 
 
+'''
+lista = []
+egszamjegyu = 0
+db = 0
+osszeg = 0
 
+for index in range(20):
+    randomszam = random.randint(1, 100)
+    lista.append(randomszam)
+    if -10 < randomszam < 10:
+        egszamjegyu += 1
+    else:
+        pass
+    db += 1
+    osszeg += randomszam
+
+print(osszeg)
+print(db)
+
+atlag = osszeg / db
+
+print(atlag)
+print(lista)
+print(egszamjegyu)
+'''
+
+class Diak():
+    def __init__(self, vnev, knev, pont):
+        self.vnev = vnev
+        self.knev = knev
+        self.pont = pont
+    
+    def __repr__(self):
+        return f'{self.vnev} {self.knev} {self.pont}'
+    
+    def vizsgal(self):
+        if self.pont > 20:
+            return 'átment'
+        else:
+            return 'megbukott'
+    
+diak1 = Diak('Kiss', 'Lajos', 34)
+diak2 = Diak('Nagy', 'Anna', 11)
+
+print(diak1.vnev, diak1.knev)
+print(diak1, diak1.vizsgal())
+print(diak2, diak2.vizsgal())
+print('\n\n\n')
+
+class Auto():
+    def __init__(self, tipus, marka, evjarat):
+        self.tipus = tipus
+        self.marka = marka
+        self.evjarat = evjarat
+    
+    def __repr__(self):
+        return f'{self.tipus} {self.marka} {self.evjarat}'
+    
+    def evszam(self):
+        if self.evjarat < 2000:
+            return 'Veteran'
+        else:
+            return 'fiatal'
+    
+auto1 = Auto('Opel', 'Corsa', 2001)
+auto2 = Auto('Trabant', 'regi fos', 1952)
+print(auto1, auto1.evszam())
+print(auto2, auto2.evszam())
 
