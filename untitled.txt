@@ -1,0 +1,74 @@
+1.feladat
+ls -l, dolgozat.txt cat paranccsal megnyitod
+cd / <- gyokerkonyvtar
+cd dolgozat
+ls -l kikeresed az om azonositot
+cd -omazonosito-
+cp -r feladat ~/dolgozat (feladat mappat copyzzuk a dolgozat mappaba)
+cd ~
+
+2. feladat
+cd dolgozat
+ls -l
+cd ..
+mkdir megoldás
+ls -l
+cd megoldás
+mkdir 2.feladat
+cd ~/dolgozat
+ls -l
+mv *.doc ~/megoldás/2.feladat
+mv *.txt ~/megoldás/2.feladat
+
+3.feladat
+cd megoldas
+mkdir 3.feladat
+mv *.info *.inf *.nfo ~/megolás/3.feladat
+
+4. feladat
+cd ~/megoldás
+cd 2.feladat
+ls -l
+sort -r -u f???7*.txt > ../4.feladat.txt
+
+5.feladat
+cd 3.feladat
+ls -l
+info, nfo, inf barmelyik jo lehet
+sort -n f???8*.nfo > ../5.feladat.txt
+
+6.feladat
+cat > 6.feladat.txt
+May
+Jun
+Jul
+Aug
+Sep
+Oct
+Nov
+Dec
+Jan
+Mar
+Apr
+Feb
+ctrl + d
+
+7. feladat
+sort -M 6.feladat.txt > honapok.txt
+
+9.
+cd ..
+ls -l
+cd dolgozat
+ls -l
+dolgozat
+ls -l
+rm -r ~/dolgozat/*/* (sima mappa)
+rm -r ~/dolgozat/*/.* (rejtett mappa)
+
+
+
+
+
+
+
