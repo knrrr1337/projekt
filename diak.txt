@@ -1,0 +1,8 @@
+Antal Rózsa;10.C;56
+Baráth Béla;10.A;42
+Cseh Tamara;10.A;49
+Kiss Józsi;10.A;22
+Kiss Olga;10.A;44
+Nagy Ottó;10.A;15
+Tóth Anna;10.C;11
+Zentai Károly;10.C;43
