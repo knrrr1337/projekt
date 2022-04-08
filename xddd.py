@@ -847,10 +847,27 @@ for sd in lista:
 print(f'\n'*3)
 
 #8. feladat
-legolcsobb = 0
-legdragabb = 0
 ind = 0
+legolcsobb = lista[ind].ar
+legdragabb = 0
 
 
+for asd in lista:
+    if int(asd.ar) > int(legdragabb):
+        legdragabb = asd.ar
+        fullos1 = asd.marka, asd.tipus, asd.inch, asd.ar
+    else:
+        ind += 1
 
-print(legolcsobb)
+print()
+
+for dsa in lista:
+    if int(dsa.ar) < int(legolcsobb):
+        legolcsobb = dsa.ar
+        fullos2 = dsa.marka, dsa.tipus, dsa.inch, dsa.ar
+    else:
+        ind += 1
+
+print(fullos1)
+print(fullos2)
+print(legdragabb, legolcsobb)
