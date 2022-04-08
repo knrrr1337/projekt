@@ -583,7 +583,7 @@ for index in f:
 for i in lista:
     print(i.ar)
 '''
-
+'''
 class Diak():
     def __init__(self, nev, osztaly, pont):
         self.nev = nev
@@ -593,6 +593,12 @@ class Diak():
     def __repr__(self):
         return f'{self.nev} {self.osztaly} {self.pont}'
 
+    def sikerult(self):
+        if self.pont < 20:
+            return 'megbukott'
+        else:
+            return 'sikerult'
+
 file = open('diak.txt', 'r', encoding='UTF-8')
 
 lista = []
@@ -601,7 +607,139 @@ for index in file:
     index = index.strip().split(';')
     nev = index[0]
     osztaly = index[1]
-    pont = index[2]
+    pont = int(index[2])
+    diakok = Diak(nev, osztaly, pont)
+    lista.append(diakok)
+file.close()
+
+for i in lista:
+    if i.osztaly == '10.A':
+        print(i)
+'''    
+'''
+class Osztaly():
+    def __init__(self, nev, taska):
+        self.nev = nev
+        self.taska = taska
+    
+    def __repr__(self):
+        return f'{self.nev} {self.taska}'
+    
+    def vizsgal(self):
+        if self.taska == 'taska':
+            return 'bajnok taskaban hozta'
+        else:
+            return 'memmeme'
+
+
+f = open('teixte.txt', 'r', encoding='UTF-8')
+
+lista = []
+
+for sor in f:
+    sorr = sor.strip().split(';')
+    diaak = sorr[0]
+    taskaa = sorr[1]
+    diakk = Osztaly(diaak, taskaa)
+    lista.append(diakk)
+    
+
+print(lista)
+
+for index in lista:
+    print(index, index.vizsgal())
+'''
+'''
+class Osztaly():
+    def __init__(self, nev, taska):
+        self.nev = nev
+        self.taska = taska
+    
+    def __repr__(self):
+        return f'{self.nev} {self.taska}'
+    
+    def vizsgal(self):
+        if self.taska != 'taska':
+            lista.append(self.nev)
+        else:
+            pass
+
+lista = []
+
+f = open('teixte.txt', 'r', encoding='UTF-8')
+
+for index in f:
+    apas = index.strip().split(';')
+    bubu = Osztaly(apas[0], apas[1])
+    bubu.vizsgal()
+
+print(lista)
+'''
+'''
+lista = []
+fej = 'fej'
+iras = 'iras'
+
+for index in range(50):
+    szam = random.randint(1, 2)
+    if szam == 1:
+        lista.append(fej)
+    else:
+        lista.append(iras)
+
+fejszam = 0
+irasszam = 0
+
+for i in lista:
+    if i == fej:
+        fejszam += 1
+    else:
+        irasszam += 1
+
+print(f'fej: {fejszam}, iraszszam: {irasszam}')
+
+tipp = input('fej v iras? ')
+megoldas = ''
+
+
+szamm = random.randint(1, 2)
+if szamm == 1:
+    megoldas = 'fej'
+else:
+    megoldas = 'iras'
+
+print(f'a tipped: {tipp}, a megoldas: {megoldas}')
+
+if tipp == megoldas:
+    print('eltalaltad')
+else:
+    print('nem')
+'''
+'''
+class Diak():
+    def __init__(self, nev, osztaly, pont):
+        self.nev = nev
+        self.osztaly = osztaly
+        self.pont = pont
+
+    def __repr__(self):
+        return f'{self.nev} {self.osztaly} {self.pont}'
+
+    def sikerult(self):
+        if self.pont < 20:
+            return 'megbukott'
+        else:
+            return 'sikerult'
+
+file = open('diak.txt', 'r', encoding='UTF-8')
+
+lista = []
+
+for index in file:
+    index = index.strip().split(';')
+    nev = index[0]
+    osztaly = index[1]
+    pont = int(index[2])
     diakok = Diak(nev, osztaly, pont)
     lista.append(diakok)
 file.close()
@@ -610,5 +748,103 @@ for i in lista:
     if i.osztaly == '10.A':
         print(i)
 
+print('\n\n')
 
+def pontszam(y):
+    return y.pont
+
+
+for y in sorted(lista, key=pontszam):
+    print(y)
+'''
+
+
+class Monitor():
+    def __init__(self, marka, tipus, inch, ar):
+        self.marka = marka
+        self.tipus = tipus
+        self.inch = inch
+        self.ar = ar
+
+    def __repr__(self):
+        return f'{self.marka} {self.tipus} {self.inch} {self.ar}'
+    
+    def kicsiE(self):
+        if int(self.inch) < 23:
+            return 'kicsi'
+        else:
+            return 'nagy'
+
+file = open('monitor_adat.txt', 'r', encoding='UTF-8')
+
+lista = []
+
+for index in file:
+    nagyonkomoly = index.strip().split(' ')
+    lista.append(Monitor(nagyonkomoly[0], nagyonkomoly[1], nagyonkomoly[2], nagyonkomoly[3]))
+
+#1. feladat
+for i in lista:
+    if i.marka == 'Asus':
+        print(i)
+
+print(f'\n'*3)
+
+#2. feladat
+for k in lista:
+    print(k, k.kicsiE())
+
+print(f'\n'*3)
+
+#3. feladat
+lgSzam = 0
+for y in lista:
+    if y.marka == 'LG':
+        lgSzam += 1
+print(lgSzam)
+
+print(f'\n'*3)
+
+#4. feladat
+pesos = int(input('pesos?:_ '))
+for a in lista:
+    if pesos > int(a.ar):
+        print(a)
+
+print(f'\n'*3)
+
+#5. feladat
+def rendezes(j):
+    return j.ar
+
+for j in sorted(lista, key=rendezes):
+    print(j)
+
+print(f'\n'*3)
+
+#6. feladat
+def atlocsokkeno(g):
+    return g.inch
+
+for g in sorted(lista, key=atlocsokkeno, reverse=True):
+    print(g)
+
+print(f'\n'*3)
+
+#7. feladat
+ujmarka = input('marka: ')
+ujtipus = input('tipus: ')
+ujinch = int(input('inch: '))
+ujar = int(input('ar: '))
+
+lista.append(f'{ujmarka} {ujtipus} {ujinch} {ujar}')
+
+for sd in lista:
+    print(sd)
+
+print(f'\n'*3)
+
+#8. feladat
+legolcsobb = ''
+legdragabb = ''
 
