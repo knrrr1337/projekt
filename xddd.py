@@ -837,7 +837,9 @@ ujtipus = input('tipus: ')
 ujinch = int(input('inch: '))
 ujar = int(input('ar: '))
 
-lista.append(f'{ujmarka} {ujtipus} {ujinch} {ujar}')
+ujmonitor = Monitor(ujmarka, ujtipus, ujinch, ujar)
+
+lista.append(ujmonitor)
 
 for sd in lista:
     print(sd)
@@ -845,6 +847,10 @@ for sd in lista:
 print(f'\n'*3)
 
 #8. feladat
-legolcsobb = ''
-legdragabb = ''
+legolcsobb = 0
+legdragabb = 0
+ind = 0
 
+
+
+print(legolcsobb)
