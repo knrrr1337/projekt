@@ -1,0 +1,35 @@
+        int min = Integer.MAX_VALUE;
+        int max = 0;
+        int maxPos = 0;
+        int minPos = 0;
+        int counter = 0;
+
+        int tomb[] = new int[10];
+
+        for (int i = 0; i < tomb.length; i++) {
+            tomb[i] = sc.nextInt();
+        }
+
+        for (int i : tomb) {
+            if (i > max) {
+                max = i;
+                maxPos = counter;
+            }
+            if (i < min) {
+                min = i;
+                minPos = counter;
+            }
+            counter++;
+        }
+        //System.out.println("min " + min + " " + minPos + "\nmax " + max + " " + maxPos);
+        if (minPos > maxPos) {
+            for (int i = minPos; i >= maxPos; i--) {
+                System.out.println(tomb[i]);
+            }
+        } else if (minPos < maxPos) {
+            for (int i = minPos; i <= maxPos; i++) {
+                System.out.println(tomb[i]);
+            }
+        } else {
+            System.out.println(tomb[0]);
+        }
