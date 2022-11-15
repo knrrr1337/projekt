@@ -1,0 +1,27 @@
+        int[] huzottSzamok = new int[5];
+        int random = 5;
+
+
+        for (int i = 0; i < 5; i++) {
+            boolean faszos = true;
+            boolean benne;
+            while (faszos) {
+                random = (int) (Math.random() * 5 + 1);
+                benne = false;
+
+                int counter = 0;
+                while (counter != i) {
+                    if (huzottSzamok[counter] == random) {
+                        benne = true;
+                    }
+                    counter++;
+                }
+
+                if (!benne) {
+                    huzottSzamok[i] = random;
+                    faszos = false;
+                }
+            }
+
+            System.out.println(huzottSzamok[i]);
+        }
