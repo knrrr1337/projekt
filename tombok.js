@@ -1,6 +1,6 @@
 //TOMBOK
 
-
+/*
 const napok = ["Hetfo", "kedd", "szerda"]
 const raawr = ["pattanas", 5, 2.3452]
 
@@ -72,3 +72,99 @@ tombostomb.push(200);
 tombostomb.shift()
 
 console.table(tombostomb)
+*/
+
+
+
+const tomb = ["piros", "kek", "zold", "feher"];
+
+tomb.push("voros", "sarga");
+console.table(tomb)
+
+
+tomb.unshift("lila")
+
+console.table(tomb);
+
+console.log(tomb.at(-2))
+
+tomb[10] = "hupilla";
+
+console.table(tomb);
+
+//delete tomb[0];
+//console.log(tomb);
+
+
+//SPLICE
+
+tomb.splice(7,3, "citromsarga")
+console.table(tomb)
+
+//eredeti tomb ne valtozzon, de egy reszet uj tombbe szeretned
+
+
+// SLICE
+const darab = tomb.slice(0, 3);
+console.log(tomb);
+console.log(darab)
+
+//rendezzuk novekvo sorrendbe :
+
+tomb.sort();
+console.log(tomb)
+tomb.reverse();
+console.log(tomb);
+
+// 10 db veletlen szam, 1-100 kozott
+
+const faszos = [];
+
+for (let i = 0; i < 10; i++) {
+    faszos[i] = Math.floor(Math.random() * (100 - 1 + 1) + 1);
+    console.log(faszos[i])
+}
+
+console.log("\n RAAWR \n")
+
+//faszos.sort(); => SORT CSAK KARAKTEREKEN MUKODIK!!!
+
+faszos.sort(function(a, b){return b-a});
+
+
+
+console.log(faszos)
+
+//maximum
+
+
+let baszas = faszos[0];
+for (let i = 0; i < faszos.length; i++) {
+    if (faszos[i] > baszas){
+        baszas = faszos[i]
+    }
+}
+
+console.log(baszas)
+
+
+let maxSzam = Math.max.apply(null, faszos);
+let maxSzam2 = Math.max(...faszos);
+console.log(maxSzam);
+console.log(maxSzam2);
+console.log("\nRAWR\n") 
+//for
+
+for (let i = 0; i < faszos.length; i++) {
+    console.log(`${i}.index: ${faszos[i]}`);
+}
+
+//indexhez nem ferunk hozza
+for (const szam of faszos) {
+    console.log(szam)
+}
+
+
+//for in
+
+
