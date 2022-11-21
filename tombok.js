@@ -74,7 +74,7 @@ tombostomb.shift()
 console.table(tombostomb)
 */
 
-
+/*
 
 const tomb = ["piros", "kek", "zold", "feher"];
 
@@ -165,6 +165,86 @@ for (const szam of faszos) {
 }
 
 
+
+
 //for in
 
 
+*/
+
+
+const szinek = ["piros", "zold", "sarga", "kek"];
+
+//for loop
+
+for (let i = 0; i < szinek.length; i++) {
+    console.log(szinek[i]);
+}
+
+// for of Elem-hez
+
+for (const szin of szinek) {
+    console.log(szin);
+}
+
+
+//for in
+
+for (const index in szinek) {
+    console.log(index, szinek[index], szinek[index].charAt(0));
+}
+
+//for each
+/*
+szinek.forEach(kiir)
+
+function kiir(value, index, tomb) {
+    tomb[index] = value.toUpperCase();
+    console.log(index, value, tomb);
+}
+
+console.log(szinek)
+*/
+
+const szamok = [3, 5, 6, 1, 8, 2, 9]
+
+let osszeg = 0;
+
+/*
+szamok.forEach(osszead)
+
+console.log(osszeg);
+
+function osszead(value) {
+    osszeg += value;
+}
+*/
+
+szamok.forEach(value => osszeg += value);
+console.log(osszeg)
+
+const ujtomb = szamok.map(value => value * 2)
+console.log(szamok)
+console.log(ujtomb)
+const nagybetu = szinek.map(szavak => szavak.toUpperCase());
+console.log(szinek);
+console.log(nagybetu);
+
+
+//filter : 
+
+const fuktered = szamok.filter(szam => szam > 5);
+
+
+console.log(fuktered)
+
+
+const ujszinek = szinek.filter(value => value.length > 4)
+console.log(ujszinek)
+
+
+const vegyes = ["alma",4,"citrom",11,6,"korte",7]
+
+const baszas = vegyes.filter(value => typeof(value) == "number");
+
+console.log(baszas)
