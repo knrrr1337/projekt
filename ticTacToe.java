@@ -13,8 +13,8 @@ public class ticTacToe {
         int playerOneY;
 
         //PLAYER TWO = O
-        int playerTwoX;
-        int playerTwoY;
+        int botX;
+        int botY;
 
         boolean gameOver = false;
         boolean kovetkezoKor = true;
@@ -145,53 +145,41 @@ public class ticTacToe {
             }
 
 
-            //PLAYER 2 :
+            //BOT :
 
-            //check if dontetlen :
-            if (lepesekSzama == 9 && !gameOver) {
-                System.out.println("Nincs már több lehetséges lépés, a játék döntetlen!");
-                gameOver = true;
-                kovetkezoKor = false;
-            }
-
-            //kerje be a poziciot a Player 2-tol, ha mar van ott elem, akkor kerje be ujra
             isPosValid = false;
-            isXValid = false;
             isYValid = false;
+            isXValid = false;
+
             if (!gameOver) {
                 while (!isPosValid) {
-                    System.out.print("Player 2 (O) X-tengely pozicio: ");
-                    playerTwoX = sc.nextInt();
-                    if (0 <= playerTwoX && playerTwoX < 3) {
+                    botX = (int)(Math.floor(Math.random() * 3));
+                    if (0 <= botX && botX < 3) {
                         isXValid = true;
                     }
 
-                    System.out.print("Player 2 (O) Y-tengely pozicio: ");
-                    playerTwoY = sc.nextInt();
-                    if (0 <= playerTwoY && playerTwoY < 3) {
+                    botY = (int)(Math.floor(Math.random() * 3));
+                    if (0 <= botY && botY < 3) {
                         isYValid = true;
                     }
 
+
                     if (isYValid && isXValid) {
-                        if (ticTacToe[playerTwoY][playerTwoX] == '-') {
-                            ticTacToe[playerTwoY][playerTwoX] = 'O';
+                        if (ticTacToe[botY][botX] == '-') {
+                            ticTacToe[botY][botX] = 'O';
                             lepesekSzama++;
                             isPosValid = true;
-                        } else {
-                            System.out.println("Ez a pozicio mar foglalt, go agane!");
+                            System.out.println("A gep lepese: " + botX + "; " + botY );
                         }
-                    } else {
-                        System.out.println("Valamelyik szam nem jo, go agane");
                     }
 
                 }
+
             }
 
-
-            //horizontal check for Player 2 :
-            playerTwoWinner = "Vége a játéknak, Player 2 (O) győzott " + lepesekSzama + " lépésből!";
-
+            playerOneWinner = "Vége a játéknak, Gep (O) győzott " + lepesekSzama + " lépésből!";
             if (!gameOver) {
+                System.out.println(lepesekSzama);
 
                 //ROW CHECK
                 for (int i = 0; i < ticTacToe.length; i++) {
@@ -204,7 +192,7 @@ public class ticTacToe {
                             }
                             System.out.println("");
                         }
-                        System.out.println(playerTwoWinner);
+                        System.out.println(playerOneWinner);
                     }
                 }
 
@@ -219,7 +207,7 @@ public class ticTacToe {
                             }
                             System.out.println("");
                         }
-                        System.out.println(playerTwoWinner);
+                        System.out.println(playerOneWinner);
                     }
                 }
 
@@ -233,7 +221,7 @@ public class ticTacToe {
                         }
                         System.out.println("");
                     }
-                    System.out.println(playerTwoWinner);
+                    System.out.println(playerOneWinner);
                 }
 
 
@@ -246,21 +234,18 @@ public class ticTacToe {
                         }
                         System.out.println("");
                     }
-                    System.out.println(playerTwoWinner);
+                    System.out.println(playerOneWinner);
                 }
-            }
-            
-            //irja ki az updated game state-t, ha meg nincs vege a jateknak :
-            if (!gameOver) {
-                System.out.println(lepesekSzama);
+
                 for (int i = 0; i < ticTacToe.length; i++) {
                     for (int j = 0; j < ticTacToe[i].length; j++) {
                         System.out.print(ticTacToe[i][j] + "\t");
                     }
                     System.out.println("");
                 }
+
             }
-            
+
         }
     }
 }
